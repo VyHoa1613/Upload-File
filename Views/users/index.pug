@@ -1,0 +1,31 @@
+extends ../layout/layout
+
+block content
+    h1 nguoi dung 
+    a(href='/users/create') tao nguoi dung
+    style.
+        th,td{
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+
+        }
+        table{
+        border-collapse: collapse;
+        width: 100%;
+        }           
+    table
+            tr
+                th avatar
+                th Name
+                th Update
+                th Delete
+            each user in users
+                tr
+                    td
+                        img(src=user.avatar,width="48" height="48")
+                    td= user.name
+                    td
+                        a(href="/users/"+user.id+'/update') Update
+                    td
+                        a(href="/users/"+user.id+'/delete') Delete

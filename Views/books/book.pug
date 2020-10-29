@@ -1,0 +1,36 @@
+extends ../layout/layout
+
+block content
+    h1 Sach 
+    a(href='/books/create') tao sach
+    style.
+        th,td{
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+
+        }
+        table{
+        border-collapse: collapse;
+        width: 100%;
+        }           
+    form 
+        input(type="text", name="q",value =quest)
+        button Search
+    table
+            tr
+                th Image
+                th Title
+                th Description
+                th Update
+                th Delete
+            each book in books
+                tr
+                    td
+                        img(src= book.image,width="48" height="48")
+                    td= book.title
+                    td= book.description
+                    td
+                        a(href="/books/"+book.id+'/update') Update
+                    td
+                        a(href="/books/"+book.id+'/delete') Delete

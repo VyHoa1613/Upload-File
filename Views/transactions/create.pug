@@ -1,0 +1,19 @@
+extends ../layout/layout 
+
+block content
+     h1 Muon Sach
+        form(action="/transactions/create",method="POST")
+            label(for="name") Name
+            select(name="idName")
+                each user in users
+                    option#op1(value=user.id)=user.name
+
+            br
+            label Books
+            select(name="idBook")
+                each book in books
+                    option#op2(value=book.id)=book.title
+            br
+            label SL
+            input(type="text",name='sl')
+            button Create

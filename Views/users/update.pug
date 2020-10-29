@@ -1,0 +1,21 @@
+extends ../layout/layout 
+
+block content
+    h1 chinh sua nguoi dung
+    form(action="/users/update",method="POST",enctype="multipart/form-data")
+                input(type="text", name="id",class="form-control",value = user.id,style='display:none')
+                label Ten
+                br
+                input(type="text", name="name",class="form-control")
+                br
+                label Email
+                br
+                input(type="text", name="email",class="form-control")
+                br
+                label Password
+                br
+                input(type="text", name="password",class="form-control")
+                br
+                input(type="file" name="avatar",class="form-control")
+                br
+                button(class="btn btn-primary mb-2") Update

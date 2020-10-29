@@ -1,0 +1,32 @@
+extends ../layout/layout 
+
+block content
+    h1 Dm CoderX
+    a(href='/transactions/create') Muon sach
+    style.
+        th,td{
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+
+        }
+        table{
+        border-collapse: collapse;
+        width: 100%;
+        }           
+    table
+            tr
+                th Ten nguoi muon
+                th Ten sach Muon
+                th So luong
+                th update
+                th Delete
+            each item in info
+                tr
+                    td= item.user
+                    td= item.book
+                    td= item.sl
+                    td
+                        a(href="/transactions/"+item.id+'/update') Update
+                    td
+                        a(href="/transactions/"+item.id+'/delete') Delete

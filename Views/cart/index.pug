@@ -1,0 +1,33 @@
+extends ../layout/layout 
+
+block content
+    h1 Cart
+    style.
+        th,td{
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+
+        }
+        table{
+        border-collapse: collapse;
+        width: 100%;
+        }           
+    form 
+        input(type="text", name="q",value =quest)
+        button Search
+    table
+            tr
+                th Image
+                th Title
+                th SL
+                th Rent
+            each cart in carts
+                tr
+                    td
+                        img(src= cart.image,width="48" height="48")
+                    td= cart.name
+                    td= cart.sl
+                    td
+                        form(action="/cart",method="POST")
+                            button(class="btn btn-primary mb-2") Rent
